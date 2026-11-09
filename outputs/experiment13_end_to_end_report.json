@@ -1,0 +1,44 @@
+{
+  "experiment": 13,
+  "project": "Netflix Content Type Classification",
+  "target_column": "type",
+  "target_encoding": {
+    "Movie": 0,
+    "TV Show": 1
+  },
+  "workflow": [
+    "Load Netflix CSV dataset",
+    "Clean and engineer metadata features",
+    "Create stratified train/test split",
+    "Train baseline Random Forest pipeline",
+    "Monitor performance and feature drift",
+    "Train and compare candidate model",
+    "Promote candidate only if F1-score does not decrease",
+    "Evaluate final production model"
+  ],
+  "stages": [
+    {
+      "stage": "Dataset loading and preprocessing",
+      "status": "SUCCESS"
+    },
+    {
+      "stage": "Baseline model training",
+      "status": "SUCCESS"
+    },
+    {
+      "stage": "Monitoring, drift detection and retraining",
+      "status": "SUCCESS"
+    },
+    {
+      "stage": "Final model evaluation",
+      "status": "SUCCESS"
+    }
+  ],
+  "final_model_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "overall_status": "SUCCESS"
+}

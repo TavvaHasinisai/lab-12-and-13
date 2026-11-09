@@ -1,0 +1,66 @@
+{
+  "experiment": 12,
+  "project": "Netflix Content Type Classification",
+  "target_column": "type",
+  "target_encoding": {
+    "Movie": 0,
+    "TV Show": 1
+  },
+  "baseline_performance": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "prediction_distribution": {
+    "baseline_tv_show_rate": 0.30619266055045874,
+    "incoming_tv_show_rate": 0.30619266055045874,
+    "change": 0.0
+  },
+  "feature_drift": {
+    "release_year": {
+      "test": "Kolmogorov-Smirnov",
+      "statistic": 0.14392201834862384,
+      "p_value": 3.650228792175505e-16,
+      "status": "DRIFT"
+    },
+    "duration_value": {
+      "test": "Kolmogorov-Smirnov",
+      "statistic": 0.0,
+      "p_value": 1.0,
+      "status": "STABLE"
+    },
+    "country_feature": {
+      "test": "Chi-square",
+      "statistic": 1029.4423791549925,
+      "p_value": 1.9625993035839424e-178,
+      "status": "DRIFT"
+    },
+    "rating_feature": {
+      "test": "Chi-square",
+      "statistic": 965.5944333756715,
+      "p_value": 4.811564346140271e-201,
+      "status": "DRIFT"
+    },
+    "genre_feature": {
+      "test": "Chi-square",
+      "statistic": 5.77990491727135e-27,
+      "p_value": 1.0,
+      "status": "STABLE"
+    },
+    "director_feature": {
+      "test": "Chi-square",
+      "statistic": 1.6581042796590142e-25,
+      "p_value": 1.0,
+      "status": "STABLE"
+    },
+    "duration_unit": {
+      "test": "Chi-square",
+      "statistic": 0.0,
+      "p_value": 1.0,
+      "status": "STABLE"
+    }
+  },
+  "drift_detected": true,
+  "note": "Incoming batch is synthetically shifted for academic drift-monitoring demonstration; it is not a live Netflix feed."
+}

@@ -1,0 +1,31 @@
+================================================================
+EXPERIMENT 13 - END-TO-END NETFLIX MLOPS PIPELINE
+================================================================
+NETFLIX DATA PREPARATION
+Rows: 8717 | Features: 7 | Train: 6973 | Test: 1744
+Target distribution: {'Movie': 6048, 'TV Show': 2669}
+Saved processed train/test files.
+
+Baseline Netflix title-type model trained and saved.
+
+EXPERIMENT 12 - MODEL MONITORING AND DRIFT DETECTION
+Baseline metrics: {'accuracy': 1.0, 'precision': 1.0, 'recall': 1.0, 'f1_score': 1.0}
+Drifted features: ['release_year', 'country_feature', 'rating_feature']
+Report saved: /mnt/data/Netflix_Experiments_12_13/outputs/experiment12_monitoring_report.json
+EXPERIMENT 12 - MODEL RETRAINING
+Baseline: {'accuracy': 1.0, 'precision': 1.0, 'recall': 1.0, 'f1_score': 1.0}
+Candidate: {'accuracy': 1.0, 'precision': 1.0, 'recall': 1.0, 'f1_score': 1.0}
+Decision: PROMOTED
+Report saved: /mnt/data/Netflix_Experiments_12_13/outputs/experiment12_retraining_report.json
+
+Running monitoring_drift.py
+
+Running retrain_model.py
+
+Experiment 12 completed successfully.
+
+Final model metrics: {'accuracy': 1.0, 'precision': 1.0, 'recall': 1.0, 'f1_score': 1.0}
+End-to-end report: /mnt/data/Netflix_Experiments_12_13/outputs/experiment13_end_to_end_report.json
+EXPERIMENT 13 COMPLETED SUCCESSFULLY
+
+STDERR:

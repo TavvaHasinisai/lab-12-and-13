@@ -1,0 +1,19 @@
+{
+  "experiment": 12,
+  "project": "Netflix Content Type Classification",
+  "baseline_model_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "candidate_model_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "promotion_decision": "PROMOTED",
+  "promotion_rule": "Candidate F1-score must be equal to or higher than baseline F1-score",
+  "production_model_updated": true
+}
