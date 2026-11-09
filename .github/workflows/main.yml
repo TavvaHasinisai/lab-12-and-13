@@ -1,0 +1,47 @@
+
+name: Netflix Experiments CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Prepare Netflix dataset
+        run: python prepare_data.py
+
+      - name: Train baseline model
+        run: python train_baseline.py
+
+      - name: Run Experiment 12
+        run: python experiment_12/run_experiment12.py
+
+      - name: Run Experiment 13
+        run: python experiment_13/end_to_end_pipeline.py
+
+      - name: Upload experiment reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Netflix-Experiment-Reports
+          path: outputs/
+          if-no-files-found: warn
